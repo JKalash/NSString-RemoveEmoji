@@ -20,7 +20,7 @@ static NSCharacterSet* VariationSelectors = nil;
         const unichar low = [self characterAtIndex: 1];
         const int codepoint = ((high - 0xD800) * 0x400) + (low - 0xDC00) + 0x10000;
 
-        return (0x1D000 <= codepoint && codepoint <= 0x1F9FF);
+        return (0x1D000 <= codepoint && codepoint <= 0x1F9FF) || (0x1F900 <= codepoint && codepoint <=0x1f9ff);
 
     // Not surrogate pair (U+2100-27BF)
     } else {
